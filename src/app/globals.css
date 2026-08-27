@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-app: #F7FAFC;
+  --bg-surface: #FFFFFF;
+  --text-dark: #172033;
+  --text-body: #475569;
+  --text-muted: #8492A6;
+  --brand-blue: #2563EB;
+  --brand-blue-light: #EAF4FF;
+  --border-ui: #E5EDF5;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-dark);
+  font-family: 'Inter', 'Manrope', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Modern thin scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Clean Card Surface */
+.ui-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5EDF5;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.ui-card-interactive:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+}
+
+/* Excerpt & Highlight Bar */
+.source-highlight-box {
+  border-left: 3px solid #2563EB;
+  background-color: #EAF4FF;
+  padding: 0.75rem 1rem;
+  border-radius: 0 6px 6px 0;
+}
+
+/* Smooth Waveform Animations */
+@keyframes wave-bounce {
+  0%, 100% {
+    height: 6px;
+  }
+  50% {
+    height: 24px;
+  }
+}
+
+.wave-bar {
+  animation: wave-bounce 1s ease-in-out infinite;
+}
+
+/* Laser scan line */
+@keyframes scan-line-blue {
+  0% {
+    top: 0%;
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0.7;
+  }
+}
+
+.animate-scan-blue {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #2563EB, #3B82F6, transparent);
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.6);
+  animation: scan-line-blue 2.2s ease-in-out infinite;
+}
+
+/* Selection */
+::selection {
+  background-color: #DBEAFE;
+  color: #1E3A8A;
+}

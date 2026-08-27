@@ -1,0 +1,143 @@
+{
+  "_meta": {
+    "description": "NormAI Compliance Risk Pattern Dataset",
+    "version": "1.0",
+    "source": "Bureau of Indian Standards - IS 302-2-14:2009, IS 302-1:2009, IS 694:2010, IS 1293:2019",
+    "last_updated": "2026-08-27",
+    "note": "Each pattern describes ONE verifiable requirement from a BIS standard clause. Evidence keywords are searched in ExtractedField values. If NO evidence keyword is found in ANY field, the pattern generates a compliance finding."
+  },
+  "patterns": [
+    {
+      "id": "P001",
+      "standard_code": "IS 302-2-14",
+      "clause_number": "Clause 1.1",
+      "severity": "PASSED",
+      "section": "Product Scope",
+      "requirement_text": "This standard applies to motor-driven domestic kitchen machines with a rated voltage not exceeding 250V single-phase for use in households. Rated power must not exceed 1000W.",
+      "evidence_keywords": ["domestic", "household", "kitchen", "motor", "230v", "single phase", "750w", "mixer", "grinder"],
+      "gap_description": "Product does not appear to fall within the scope of IS 302-2-14 based on submitted documentation.",
+      "recommended_action": "Confirm product is a domestic single-phase kitchen machine with rated voltage <= 250V and power <= 1000W and explicitly state this in the product description."
+    },
+    {
+      "id": "P002",
+      "standard_code": "IS 302-2-14",
+      "clause_number": "Clause 7.1",
+      "severity": "CRITICAL",
+      "section": "Required Markings",
+      "requirement_text": "The appliance nameplate shall explicitly display: rated voltage or voltage range in Volts (e.g. '230 V' or '220-240 V'), nature of supply (~) or '50 Hz', rated power input in Watts (W), and the manufacturer's name or trademark.",
+      "evidence_keywords": ["230v", "230 v", "rated voltage", "50hz", "50 hz", "watts", "750w", "750 w", "nameplate", "marking"],
+      "gap_description": "No evidence of complete nameplate marking data (voltage, frequency, wattage) found in submitted specification documents.",
+      "recommended_action": "Revise nameplate engineering drawing to incorporate '230 V AC, 50 Hz, 750 W' adjacent to the ISI Mark placeholder. Verify against IS 302-1 Clause 7 marking requirements before factory pre-audit."
+    },
+    {
+      "id": "P003",
+      "standard_code": "IS 302-2-14",
+      "clause_number": "Clause 8.1",
+      "severity": "ATTENTION",
+      "section": "Classification",
+      "requirement_text": "The appliance shall be classified as Class I (earthed) or Class II (double insulated). The classification shall be stated on the nameplate and in technical documentation.",
+      "evidence_keywords": ["class i", "class 1", "earthed", "earth", "class ii", "double insulated", "insulation class"],
+      "gap_description": "Insulation class (Class I or Class II) not declared in submitted documentation.",
+      "recommended_action": "Explicitly state insulation class (Class I - earthed, or Class II - double insulated) in both the product specification sheet and the nameplate artwork."
+    },
+    {
+      "id": "P004",
+      "standard_code": "IS 302-2-14",
+      "clause_number": "Clause 13.2",
+      "severity": "ATTENTION",
+      "section": "Safety Test Evidence",
+      "requirement_text": "Leakage current from accessible conductive parts shall not exceed 0.75 mA (Class I) or 0.25 mA (Class II) under normal operating conditions.",
+      "evidence_keywords": ["leakage", "leakage current", "0.75 ma", "0.25 ma", "touch current", "insulation resistance"],
+      "gap_description": "No leakage current test result or insulation resistance value found in submitted test evidence.",
+      "recommended_action": "Include leakage current measurement results (target: <0.5 mA for Class I) from an accredited BIS laboratory in the technical dossier."
+    },
+    {
+      "id": "P005",
+      "standard_code": "IS 302-2-14",
+      "clause_number": "Clause 13.3",
+      "severity": "PASSED",
+      "section": "Safety Test Evidence",
+      "requirement_text": "Dielectric strength: 1500 V AC must be applied between live conductors and accessible metal parts for 60 seconds without breakdown. Leakage current during test must be <5 mA.",
+      "evidence_keywords": ["1500v", "1500 v", "dielectric", "flash test", "high voltage", "electric strength", "breakdown"],
+      "gap_description": "No dielectric strength (flash) test evidence at 1500V found in submitted test records.",
+      "recommended_action": "Attach calibrated flash tester records showing 1500 V AC applied for 60 s with zero breakdown. Update QA test plan to include this as a mandatory routine test."
+    },
+    {
+      "id": "P006",
+      "standard_code": "IS 302-2-14",
+      "clause_number": "Clause 19.11",
+      "severity": "CRITICAL",
+      "section": "Safety Test Evidence",
+      "requirement_text": "Motor must undergo 30-second locked-rotor abnormal operation test. Winding insulation temperature must not exceed 150 degrees C. Thermal overload protector (TOP) must trip safely without fire or flame.",
+      "evidence_keywords": ["locked rotor", "locked-rotor", "thermal overload", "top", "overload protector", "stall test", "abnormal operation", "trip", "19.11"],
+      "gap_description": "No locked-rotor thermal overload trip test evidence found in submitted documentation.",
+      "recommended_action": "Conduct locked-rotor trip endurance test on 3 production samples per Clause 19.11. Attach calibrated temperature-rise curve data showing TOP trips before 150 degrees C winding temperature is exceeded."
+    },
+    {
+      "id": "P007",
+      "standard_code": "IS 302-2-14",
+      "clause_number": "Clause 22.1",
+      "severity": "ATTENTION",
+      "section": "Technical Documentation",
+      "requirement_text": "Appliance must be fitted with means to prevent unintentional starting after power interruption. Safety interlock or lid switch must be documented.",
+      "evidence_keywords": ["interlock", "lid switch", "safety switch", "lid sensor", "interlocking", "restart protection"],
+      "gap_description": "No evidence of safety interlock or restart-prevention mechanism found in product specification.",
+      "recommended_action": "Document the lid-interlock or power-restart protection mechanism in the product specification, with reference to the relevant IS 302-2-14 clause and circuit diagram."
+    },
+    {
+      "id": "P008",
+      "standard_code": "IS 302-1",
+      "clause_number": "Clause 25.7",
+      "severity": "CRITICAL",
+      "section": "Technical Documentation",
+      "requirement_text": "Flexible supply cord must be of at least 0.75 mm2 cross-sectional area, 3-core (live, neutral, earth), certified under BIS IS 694 ISI-marked with a valid vendor CM/L licence number.",
+      "evidence_keywords": ["0.75 mm", "0.75mm", "is 694", "power cord", "3-core", "flexible cord", "cm/l", "isl cord", "supply cord"],
+      "gap_description": "Supply cord IS 694 certification (CM/L licence) not found in submitted Bill of Materials or test certificate.",
+      "recommended_action": "Procure IS 694 ISI-marked 3-core 0.75 mm2 flexible cord from a BIS-licensed vendor and include the vendor's CM/L number in the Bill of Materials and technical dossier."
+    },
+    {
+      "id": "P009",
+      "standard_code": "IS 302-1",
+      "clause_number": "Clause 27.5",
+      "severity": "ATTENTION",
+      "section": "Factory Information",
+      "requirement_text": "Earth resistance between accessible metal parts and the earthing pin shall not exceed 0.1 ohm, verified with a test current of 25 A for 1 second.",
+      "evidence_keywords": ["earth resistance", "earthing", "0.1 ohm", "earth continuity", "milliohm", "continuity test", "25a"],
+      "gap_description": "Quantitative earth continuity resistance measurement not found in submitted QA records - binary pass/fail is insufficient.",
+      "recommended_action": "Update QA inspection logs to record numerical resistance values (target: < 0.05 ohm) using a calibrated milliohmmeter for BIS factory audit compliance."
+    },
+    {
+      "id": "P010",
+      "standard_code": "IS 1293",
+      "clause_number": "Clause 12.1",
+      "severity": "ATTENTION",
+      "section": "Product Scope",
+      "requirement_text": "Fitted 6A 3-pin plug must comply with IS 1293:2019, with mandatory insulated sleeves on live and neutral pins to the 2019 revision dimensional gauge.",
+      "evidence_keywords": ["is 1293", "plug", "3-pin", "6a plug", "pin sleeve", "insulated pin", "plug conformity"],
+      "gap_description": "3-pin plug compliance with IS 1293:2019 pin sleeve dimensions not verified in submitted specification.",
+      "recommended_action": "Provide dimensional drawing and Certificate of Conformity for the moulded plug verifying compliance with IS 1293:2019 Table 1 gauge specifications."
+    },
+    {
+      "id": "P011",
+      "standard_code": "IS 302-2-14",
+      "clause_number": "Clause 7.6",
+      "severity": "ATTENTION",
+      "section": "Required Markings",
+      "requirement_text": "Instructions for use must be supplied in the language of the country of destination (Hindi and/or regional language for India). Safety warnings must be printed on durable labels.",
+      "evidence_keywords": ["instruction", "user manual", "hindi", "manual", "safety warning", "label", "operating instruction"],
+      "gap_description": "No user instruction manual or safety labelling document found in the submitted technical dossier.",
+      "recommended_action": "Prepare a bilingual (English + Hindi) user manual and safety label artwork and include in the technical file."
+    },
+    {
+      "id": "P012",
+      "standard_code": "IS 302-2-14",
+      "clause_number": "Clause 9.1",
+      "severity": "PASSED",
+      "section": "Safety Test Evidence",
+      "requirement_text": "The appliance must be fitted with a thermal cut-out or equivalent over-temperature protection that disconnects the heating element before thermal damage occurs.",
+      "evidence_keywords": ["thermal cut-out", "thermal cutout", "overtemperature", "over temperature", "thermal protection", "top", "thermal protector", "auto reset", "auto-reset"],
+      "gap_description": "No thermal cut-out or over-temperature protection device documented in specification.",
+      "recommended_action": "Document the thermal overload protector (TOP) specifications including trip temperature, reset type (manual/auto) in the product technical file."
+    }
+  ]
+}
